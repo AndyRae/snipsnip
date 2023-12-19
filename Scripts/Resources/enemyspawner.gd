@@ -7,22 +7,18 @@ var initial_position := Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_position = position
-	start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func start():
-	print("start enemy")
-
 func _on_shoot_timer_timeout():
-	print("timer running?")
-	print(initial_position)
 	var p = axe_load.instantiate()
+	var rand_speed = randf_range(5, 10)
+	var rand_x = randf_range(-180,180)
+	var rand_y = randf_range(1,180)
 	get_tree().root.add_child(p)
-	p.start(initial_position)
-	print(p)
-	$ShootTimer.wait_time = randf_range(4, 20)
+	p.start(initial_position, rand_x, rand_y, rand_speed)
+	$ShootTimer.wait_time = randf_range(1, 2)
 	$ShootTimer.start()
 	

@@ -12,8 +12,11 @@ func _ready():
 	$CollisionPolygon2D.scale = flip
 	
 
-func start(pos):
+func start(pos, new_x, new_y, new_speed):
 	position = pos
+	x = new_x
+	y = new_y
+	speed = new_speed
 	
 
 func _process(delta):

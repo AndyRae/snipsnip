@@ -176,4 +176,4 @@ y = 13
 position = Vector2(882, 429)
 
 [node name="Node2D" parent="." instance=ExtResource("12_byp55")]
-position = Vector2(1001, 359)
+position = Vector2(584, -114)
