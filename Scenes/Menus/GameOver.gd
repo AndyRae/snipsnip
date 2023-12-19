@@ -1,8 +1,7 @@
 extends CanvasLayer
 
-const GAME_OVER_MESSAGE = "# GAME OVER"
-const GAME_OVER_SUBTITLE = "You got the snip!"
-
+signal reset
+signal goto_main
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +11,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_reset_button_pressed():
+	print("resetting")
+	reset.emit()
+
+
+func _on_main_menu_button_pressed():
+	print("going to main")
+	reset.emit()
