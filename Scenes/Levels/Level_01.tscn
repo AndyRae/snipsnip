@@ -169,3 +169,5 @@ collision_mask = 2
 speed = 5.0
 x = -8
 y = 13
+
+[connection signal="died" from="Player" to="GameManager" method="reset_level"]

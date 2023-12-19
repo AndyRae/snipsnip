@@ -91,8 +91,10 @@ func death_tween():
 	await tween.finished
 	global_position = spawn_point.global_position
 	await get_tree().create_timer(0.3).timeout
-	AudioManager.respawn_sfx.play()
-	respawn_tween()
+	remove_life(1)
+	if not is_out_of_lives():
+		AudioManager.respawn_sfx.play()
+		respawn_tween()
 
 func respawn_tween():
 	var tween = create_tween()

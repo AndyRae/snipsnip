@@ -11,3 +11,6 @@ func add_score():
 # Loads next level
 func load_next_level(next_scene : PackedScene):
 	get_tree().change_scene_to_packed(next_scene)
+
+func reset_level():
+	get_tree().change_scene_to_file("res://Scenes/Menus/GameOver.tscn")
