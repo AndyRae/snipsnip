@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://byimif2yxxkox"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_s72w3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.388
+anchor_bottom = 0.338
+offset_right = -446.976
+offset_bottom = -219.024
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_s72w3")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TitlesMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TitlesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TitlesMargin"]
+layout_mode = 2
+
+[node name="Main Title" type="Label" parent="MarginContainer/VBoxContainer/TitlesMargin/TitlesContainer"]
+layout_mode = 2
+text = "The Hoof Prints of Persia"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TitlesMargin/TitlesContainer"]
+layout_mode = 2
+text = "Otherwise known as:"
+
+[node name="Subtitle" type="Label" parent="MarginContainer/VBoxContainer/TitlesMargin/TitlesContainer"]
+layout_mode = 2
+text = "The Unfortunate Demise of Sunny Tuesday"
+
+[node name="MenuContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MenuContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer/MenuButtons"]
+layout_mode = 2
+text = "Play"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuContainer/MenuButtons"]
+layout_mode = 2
+text = "Exit"
