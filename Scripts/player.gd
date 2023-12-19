@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var max_jump_count : int = 2
 var jump_count : int = 2
 
+@export var life_count : int = 2
+
 @export_category("Toggle Functions") # Double jump feature is disable by default (Can be toggled from inspector)
 @export var double_jump : = false
 
@@ -98,6 +100,13 @@ func jump_tween():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(0.7, 1.4), 0.1)
 	tween.tween_property(self, "scale", Vector2.ONE, 0.1)
+
+# Life gain/loss functions
+func add_life(num_lives):
+	life_count += num_lives
+
+func remove_life(num_lives):
+	life_count -= num_lives
 
 # --------- SIGNALS ---------- #
 
