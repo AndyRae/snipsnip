@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://b86wm48m5fttc"]
+[gd_scene load_steps=22 format=3 uid="uid://bulqpebucto0t"]
 
 [ext_resource type="Script" path="res://Scripts/landmine.gd" id="1_bs1s4"]
-[ext_resource type="Texture2D" uid="uid://cf5owp7nrhvct" path="res://Assets/Items/Vector/genericItems_vector_colored.svg" id="1_h238d"]
+[ext_resource type="Texture2D" uid="uid://cl47drqxos0k3" path="res://Assets/Items/Vector/genericItems_vector_colored.svg" id="1_h238d"]
 [ext_resource type="Texture2D" uid="uid://cuo5qriaxq0s0" path="res://Assets/Explosion/exp2_0.png" id="3_j0irw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erdea"]
