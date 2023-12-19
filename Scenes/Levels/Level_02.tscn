@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjb3dx2x4bocm"]
+[gd_scene load_steps=13 format=3 uid="uid://bjb3dx2x4bocm"]
 
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_lpo2y"]
 [ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/Coin.tscn" id="3_nht2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_um0jo"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_ns8o6"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_doswy"]
+[ext_resource type="Texture2D" uid="uid://d0nooci305jdr" path="res://Assets/bg_f8f8f8-flat_750x_075_f-pad_750x1000_f8f8f8-removebg-preview.png" id="8_dtt1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs0qk"]
 texture = ExtResource("5_8107p")
@@ -154,3 +155,40 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_doswy")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
+
+[node name="Health" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthTexture" type="TextureRect" parent="UserInterface/GameUI/Health"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 173.0
+offset_top = -24.0
+offset_right = 324.0
+offset_bottom = 153.0
+texture = ExtResource("8_dtt1i")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="HealthLabel" type="Label" parent="UserInterface/GameUI/Health" node_paths=PackedStringArray("shortcut_context")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.32
+anchor_top = 1.537
+anchor_right = 5.32
+anchor_bottom = 1.537
+offset_left = 59.2
+offset_top = -30.48
+offset_right = 112.2
+offset_bottom = 22.52
+shortcut_context = NodePath("")
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 38
+text = "x 4"

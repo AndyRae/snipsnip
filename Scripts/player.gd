@@ -106,12 +106,14 @@ func _on_collision_body_entered(_body):
 	print(_body)
 
 	if _body.is_in_group("Traps"):
+		GameManager.subtract_health()
 		AudioManager.death_sfx.play()
 		death_particles.emitting = true
 		death_tween()
 		
 	if _body.is_in_group("Projectiles"):
 		AudioManager.death_sfx.play()
+		GameManager.subtract_health()
 		death_particles.emitting = true
 		death_tween()
 		

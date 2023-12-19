@@ -1,5 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cjanwm3sy2x37"]
 
+
 [ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="1_oqkjg"]
 [ext_resource type="PackedScene" uid="uid://bjb3dx2x4bocm" path="res://Scenes/Levels/Level_02.tscn" id="2_0ac5u"]
 [ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_pay8t"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="6_66mfc"]
 [ext_resource type="Texture2D" uid="uid://clreg520jah1j" path="res://Assets/platformPack_item008.png" id="7_j7jun"]
 [ext_resource type="FontFile" uid="uid://qgc4vi5osk7v" path="res://Assets/Fonts/Star Choco.ttf" id="8_gwcy2"]
+[ext_resource type="Texture2D" uid="uid://d0nooci305jdr" path="res://Assets/bg_f8f8f8-flat_750x_075_f-pad_750x1000_f8f8f8-removebg-preview.png" id="10_4r1w0"]
 [ext_resource type="PackedScene" uid="uid://bhlbn5jymx67i" path="res://Scenes/Prefabs/projectile.tscn" id="10_mqfmq"]
 [ext_resource type="PackedScene" uid="uid://bulqpebucto0t" path="res://Scenes/Prefabs/landmine.tscn" id="11_syomq"]
 [ext_resource type="PackedScene" uid="uid://b4q5ou47nd5b3" path="res://Scripts/Resources/enemyspawner.tscn" id="12_byp55"]
@@ -134,6 +136,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_66mfc")
@@ -167,6 +173,42 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_gwcy2")
 theme_override_font_sizes/font_size = 32
 text = "x 3"
+
+[node name="Health" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthTexture" type="TextureRect" parent="UserInterface/GameUI/Health"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 173.0
+offset_top = -24.0
+offset_right = 324.0
+offset_bottom = 153.0
+texture = ExtResource("10_4r1w0")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="HealthLabel" type="Label" parent="UserInterface/GameUI/Health" node_paths=PackedStringArray("shortcut_context")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.32
+anchor_top = 1.537
+anchor_right = 5.32
+anchor_bottom = 1.537
+offset_left = 59.2
+offset_top = -30.48
+offset_right = 112.2
+offset_bottom = 22.52
+shortcut_context = NodePath(".")
+theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 38
+text = "x 4"
 
 [node name="Projectile" parent="." instance=ExtResource("10_mqfmq")]
 position = Vector2(904, 78)
