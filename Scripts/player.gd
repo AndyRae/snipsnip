@@ -21,6 +21,7 @@ var is_grounded : bool = false
 @onready var particle_trails = $ParticleTrails
 @onready var death_particles = $DeathParticles
 
+
 # --------- BUILT-IN FUNCTIONS ---------- #
 
 func _process(_delta):
@@ -28,6 +29,8 @@ func _process(_delta):
 	movement()
 	player_animations()
 	flip_player()
+	if is_out_of_lives():
+		died.emit()
 	
 # --------- CUSTOM FUNCTIONS ---------- #
 
@@ -107,8 +110,14 @@ func add_life(num_lives):
 
 func remove_life(num_lives):
 	life_count -= num_lives
+	if is_out_of_lives():
+		died.emit()
+	
+func is_out_of_lives():
+	return life_count <= 0
 
 # --------- SIGNALS ---------- #
+signal died
 
 # Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(_body):
