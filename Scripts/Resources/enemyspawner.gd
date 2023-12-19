@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_shoot_timer_timeout():
 	var p = axe_load.instantiate()
-	var rand_speed = randf_range(5, 10)
+	var rand_speed = randf_range(10, 12)
 	var rand_x = randf_range(-180,180)
 	var rand_y = randf_range(1,180)
 	get_tree().root.add_child(p)
