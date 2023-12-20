@@ -58,6 +58,10 @@ func jump():
 	jump_tween()
 	AudioManager.jump_sfx.play()
 	velocity.y = -jump_force
+	
+# activate power up
+func power_up_jump():
+	double_jump = true
 
 # Handle Player Animations
 func player_animations():
@@ -103,7 +107,6 @@ func jump_tween():
 
 # Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(_body):
-	print(_body)
 
 	if _body.is_in_group("Traps"):
 		GameManager.subtract_health()
@@ -118,9 +121,16 @@ func _on_collision_body_entered(_body):
 		death_tween()
 		
 
-
+# if the horse crotch box has been entered
 func _on_crotch_box_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Traps"):
 		AudioManager.death_sfx.play()
 		death_particles.emitting = true
 		death_tween()
+
+
+# if the horse has entered an area
+func _on_invulnerable_hit_box_area_entered(area):
+	if area.is_in_group("PowerUp"):
+		power_up_jump()
+
