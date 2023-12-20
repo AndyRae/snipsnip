@@ -122,3 +122,4 @@ shape = SubResource("RectangleShape2D_dy0ul")
 
 [connection signal="area_shape_entered" from="CrotchBox" to="." method="_on_crotch_box_area_shape_entered"]
 [connection signal="body_entered" from="CrotchBox" to="." method="_on_collision_body_entered"]
+[connection signal="area_entered" from="InvulnerableHitBox" to="." method="_on_invulnerable_hit_box_area_entered"]
